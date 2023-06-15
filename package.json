@@ -1,5 +1,5 @@
 {
-  "name": "@jsdevtools/rehype-toc",
+  "name": "@247grad/rehype-toc",
   "version": "3.0.2",
   "description": "A rehype plugin that adds a table of contents (TOC) to the page",
   "keywords": [
@@ -15,11 +15,18 @@
     "name": "James Messinger",
     "url": "https://jamesmessinger.com"
   },
+  "contributors": [
+    {
+      "name": "Lukas Härtel",
+      "email": "lukas.haertel@247grad.de",
+      "url": "https://247grad.de"
+    }
+  ],
   "license": "MIT",
   "homepage": "https://jstools.dev/rehype-toc",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JS-DevTools/rehype-toc.git"
+    "url": "https://github.com/247GRAD/rehype-toc.git"
   },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
