@@ -9,10 +9,10 @@ import { NormalizedOptions } from "./options";
  */
 export function findTargetNode(
   root: Node,
-  options: NormalizedOptions
+  location: string
 ): [HtmlElementNode, HtmlElementNode] {
   let [body, bodyParent] = findTagName(root, "body");
-  let [target, targetParent] = findTagName(body || root, options.location);
+  let [target, targetParent] = findTagName(body || root, location);
 
   if (target) {
     return [target, targetParent || body || (root as HtmlElementNode)];

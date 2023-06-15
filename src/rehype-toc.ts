@@ -16,7 +16,8 @@ export function toc(this: Processor, opts?: Options): Transformer {
 
   return function transformer(root: Node): Node {
     // Find the target element
-    let [mainNode, mainParent] = findTargetNode(root, options);
+    let [mainNode] = findTargetNode(root, "main");
+    let [targetNode, targetParent] = findTargetNode(root, options.location);
 
     // Find all heading elements
     let headings = findHeadings(mainNode, options);
@@ -28,8 +29,8 @@ export function toc(this: Processor, opts?: Options): Transformer {
     let node = customizationHooks(tocNode, options);
 
     if (node) {
-      // Add the table of contents to the <main> element
-      insertTOC(node, mainNode, mainParent, options);
+      // Add the table of contents to the target element
+      insertTOC(node, targetNode, targetParent, options);
     }
 
     return root;
