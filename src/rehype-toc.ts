@@ -3,7 +3,7 @@ import { Node } from "unist";
 import { createTOC } from "./create-toc";
 import { customizationHooks } from "./customization-hooks";
 import { findHeadings } from "./fiind-headings";
-import { findMainNode } from "./find-main-node";
+import { findTargetNode } from "./find-target-node";
 import { insertTOC } from "./insert-toc";
 import { NormalizedOptions, Options } from "./options";
 
@@ -15,8 +15,8 @@ export function toc(this: Processor, opts?: Options): Transformer {
   let options = new NormalizedOptions(opts);
 
   return function transformer(root: Node): Node {
-    // Find the <main> or <body> element
-    let [mainNode, mainParent] = findMainNode(root);
+    // Find the target element
+    let [mainNode, mainParent] = findTargetNode(root, options);
 
     // Find all heading elements
     let headings = findHeadings(mainNode, options);
