@@ -1,7 +1,6 @@
 import { Node } from "unist";
 import { isHtmlElementNode } from "./type-guards";
 import { HtmlElementNode } from "./types";
-import { NormalizedOptions } from "./options";
 
 /**
  * Returns the target node, or the `<body>` node if there is no target.
